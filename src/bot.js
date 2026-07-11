@@ -42,23 +42,39 @@ async function dismissCookieBanner(page) {
   }
 }
 
-async function waitForAssistantReply(page, timeoutMs = 90_000) {
-  // Wait until the page stops producing new text (assistant streamed reply).
+async function waitForAssistantReply(page, timeoutMs = 180_000) {
   const start = Date.now();
+  const typing = page.locator("text=/is responding/i");
+
+  // Phase 1: wait for the "Pif is responding..." indicator to appear (reply started).
+  await typing.first().waitFor({ state: "visible", timeout: 30_000 }).catch(() => {});
+
+  // Phase 2: wait for the indicator to disappear (reply finished streaming).
+  while (Date.now() - start < timeoutMs) {
+    if ((await typing.count()) === 0) break;
+    await sleep(1500);
+  }
+
+  // Phase 3: let the DOM settle (product cards render after the stream).
   let prevLen = 0;
   let stableTicks = 0;
   while (Date.now() - start < timeoutMs) {
-    const len = (await page.textContent("body").catch(() => "") || "").length;
+    const len = ((await page.textContent("body").catch(() => "")) || "").length;
     stableTicks = len === prevLen && len > 0 ? stableTicks + 1 : 0;
     prevLen = len;
-    if (stableTicks >= 4) return; // ~4s of no change → reply finished
+    if (stableTicks >= 3) return;
     await sleep(1000);
   }
 }
 
 async function clickFirstProduct(page) {
-  // Heuristics: product cards in the chat results are links/buttons with an
-  // image or a price. Try several selectors, most specific first.
+  // Pif renders product cards with a "Select" button — prefer that.
+  const select = page.getByRole("button", { name: /^select$/i });
+  if (await select.count()) {
+    await select.first().click({ timeout: 5000 }).catch(() => {});
+    return "select-button";
+  }
+  // Fallback heuristics for other layouts.
   const candidates = [
     '[data-testid*="product"]',
     'a[href*="product"]',
