@@ -1,0 +1,15 @@
+[
+  { "slug": "1-800-flowers", "name": "1-800-Flowers", "site": "1800flowers.com", "countries": ["US"], "methods": ["FastCheckout"], "prompt": "I need a birthday bouquet delivered today, something colorful under $60" },
+  { "slug": "allbirds", "name": "AllBirds", "site": "allbirds.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "I'm looking for the women's Tree Runners in grey, size 8" },
+  { "slug": "alo-yoga", "name": "Alo Yoga", "site": "aloyoga.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "Find me high-waisted black yoga leggings in size small" },
+  { "slug": "amazon", "name": "Amazon", "site": "amazon.com", "countries": ["US"], "methods": ["FastCheckout"], "prompt": "I need a pack of AA batteries and a USB-C charging cable" },
+  { "slug": "bombas", "name": "Bombas", "site": "bombas.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "Add a pack of men's ankle athletic socks to my cart" },
+  { "slug": "brooklinen", "name": "Brooklinen", "site": "brooklinen.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "I want a queen sheet set in a neutral color" },
+  { "slug": "cosmetics-online-ie", "name": "Cosmetics Online IE", "site": "cosmeticsonline.ie", "countries": ["EU"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "Looking for a daily SPF 50 face sunscreen for sensitive skin" },
+  { "slug": "hidratei", "name": "Hidratei", "site": "hidratei.com.br", "countries": ["BR"], "methods": ["FastCheckout"], "prompt": "Show me a leave-in treatment for dry, frizzy hair" },
+  { "slug": "insider", "name": "Insider", "site": "insiderstore.com.br", "countries": ["BR"], "methods": ["SelfCheckout"], "prompt": "Find a men's lightweight performance t-shirt in black" },
+  { "slug": "redbull", "name": "RedBull", "site": "redbullshop.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "I want a Red Bull racing cap" },
+  { "slug": "reebok", "name": "Reebok", "site": "reebok.com", "countries": ["US"], "methods": ["SelfCheckout"], "prompt": "Show me men's classic leather sneakers in white, size 10" },
+  { "slug": "skullcandy-eu", "name": "Skullcandy EU", "site": "skullcandy.eu", "countries": ["EU"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "Show me wireless noise-cancelling earbuds under €100" },
+  { "slug": "stance", "name": "Stance", "site": "stance.com", "countries": ["US"], "methods": ["FastCheckout", "SelfCheckout"], "prompt": "Add a pair of crew socks with a fun pattern to my cart" }
+]

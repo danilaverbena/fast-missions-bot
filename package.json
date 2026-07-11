@@ -1,0 +1,14 @@
+{
+  "name": "fast-missions-bot",
+  "version": "1.0.0",
+  "description": "Bot that walks FAST work.fast.xyz merchant missions on shop.fast.xyz and captures the required step screenshots. Always stops before payment.",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "mission": "node src/bot.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}
